@@ -1,0 +1,92 @@
+$images: (
+  mobileHero: url(/images/mobileHero.jpg),
+  desktopHero: url(/images/desktopHero.jpg),
+);
+
+$colors: (
+  primary: #143738,
+  secondary: #dc8363,
+  light: #ffffff,
+);
+
+$tablet: 800px;
+$desktop: 1000px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@function image($image-name) {
+  @return map-get($images, $image-name);
+}
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.navbar {
+  background-color: color(primary);
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin-right: 40px;
+}
+
+.nav-link {
+  margin-right: 10px;
+}
+
+.navbar-brand,
+.nav-link {
+  color: color(secondary);
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: color(light);
+}
+
+.navbar-toggler {
+  border: none;
+  color: color(secondary);
+}
+
+.hero {
+  background-image: image(mobileHero);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 94vh;
+  width: 100%;
+
+  @include desktop {
+    background-image: image(desktopHero);
+  }
+}
+
+.heroText {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.heroBrand {
+  color: color(primary);
+  font-size: 80px;
+}
