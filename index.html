@@ -19,7 +19,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">BLANK BEAUTY</a>
         <button
@@ -44,13 +44,54 @@
           </ul>
         </div>
       </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg">
+      <!--  Show this only on mobile to medium screens  -->
+      <a class="navbar-brand d-lg-none" href="#">BLANK BEAUTY</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!--  Use flexbox utility classes to change how the child elements are justified  -->
+      <div
+        class="collapse navbar-collapse justify-content-between"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+
+        <!--   Show this only lg screens and up   -->
+        <a class="navbar-brand d-none d-lg-block" href="#">BLANK BEAUTY</a>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero -->
     <div class="hero">
       <div class="heroText">
         <h1 class="heroBrand">BLANK BEAUTY</h1>
-        <h3>Simple. Clean. Potent.</h3>
+        <h2 class="heroTagline">Simple. Clean. Potent.</h2>
         <button class="btn shopNowBtn">Shop Now</button>
       </div>
     </div>
@@ -62,13 +103,15 @@
           <img src="images/aboutUsMobile.jpg" style="width: 100%" />
         </div>
         <div class="col-12 col-sm-6 text-center order-1 order-sm-2">
-          <h3>BLANK BEAUTY - Behind the Scenes</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
-            eius optio beatae maxime dicta at reiciendis veritatis! Officia ea
-            omnis ipsum est cumque! Optio nemo aut error, ullam asperiores
-            necessitatibus.
-          </p>
+          <div class="aboutParagraph">
+            <h3>BLANK BEAUTY - Behind the Scenes</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt
+              eius optio beatae maxime dicta at reiciendis veritatis! Officia ea
+              omnis ipsum est cumque! Optio nemo aut error, ullam asperiores
+              necessitatibus.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -93,16 +136,34 @@
     <div class="shopLinks">
       <div class="row">
         <div class="col">
-          <img src="images/shopWhite.jpg" style="width: 100%" />
+          <img
+            src="images/shopWhite.jpg"
+            style="width: 100%"
+            alt="Shop White Label products"
+          />
         </div>
         <div class="col">
-          <img src="images/shopBlack.jpg" style="width: 100%" />
+          <img
+            src="images/shopBlack.jpg"
+            style="width: 100%"
+            alt="Shop Black Label products"
+          />
         </div>
         <div class="col">
-          <img src="images/shopAll.jpg" style="width: 100%" />
+          <img
+            src="images/shopAll.jpg"
+            style="width: 100%"
+            alt="Shop All products"
+          />
         </div>
       </div>
     </div>
+
+    <!-- <footer>
+      <div class="footer">
+        <h5>BLANK BEAUTY</h5>
+      </div>
+    </footer> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
