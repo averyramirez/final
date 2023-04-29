@@ -7,6 +7,7 @@ $colors: (
   primary: #143738,
   secondary: #dc8363,
   light: #ffffff,
+  beige: #dcd5c6,
 );
 
 $tablet: 800px;
@@ -36,6 +37,10 @@ html,
 body {
   margin: 0px;
   height: 100%;
+}
+
+body {
+  background-color: color(primary);
 }
 
 .navbar {
@@ -82,11 +87,52 @@ body {
 }
 
 .heroText {
-  margin-left: 100px;
-  margin-top: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
+
+  @include desktop {
+    margin-left: 100px;
+    margin-top: 150px;
+  }
 }
 
 .heroBrand {
   color: color(primary);
-  font-size: 80px;
+  font-size: 60px;
+
+  @include desktop {
+    font-size: 80px;
+  }
+}
+
+.shopNowBtn {
+  background-color: color(secondary);
+  color: color(light);
+  font-size: 30px;
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+.aboutUs {
+  background-color: color(beige);
+  margin: 0;
+
+  @include desktop {
+    height: 50vh;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow: hidden;
+  }
+}
+
+.icons {
+  margin: 0;
+
+  @include desktop {
+    height: 20vh;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 }
