@@ -118,7 +118,7 @@ body {
   margin: 0;
 
   @include desktop {
-    height: 50vh;
+    height: 45vh;
     margin-left: 200px;
     margin-right: 200px;
     overflow: hidden;
@@ -134,5 +134,16 @@ body {
     margin-right: 300px;
     padding-bottom: 20px;
     padding-top: 20px;
+  }
+}
+
+.shopLinks {
+  margin: 0;
+
+  @include desktop {
+    height: 30vh;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
   }
 }
