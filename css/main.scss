@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
 $images: (
   mobileHero: url(/images/mobileHero.jpg),
   desktopHero: url(/images/desktopHero.jpg),
 );
 
+// Colors
 $colors: (
   primary: #143738,
   secondary: #dc8363,
@@ -10,6 +13,7 @@ $colors: (
   beige: #dcd5c6,
 );
 
+// Media query sizes
 $tablet: 800px;
 $desktop: 1000px;
 
@@ -43,19 +47,48 @@ body {
   background-color: color(primary);
 }
 
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 15px;
+  position: fixed;
+  background-color: color(primary);
+}
+
+.footer {
+  color: white;
+}
+
+// Navbar
 .navbar {
   background-color: color(primary);
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+
+  @include desktop {
+    padding-left: 190px;
+    padding-right: 190px;
+  }
 }
 
 .navbar-brand {
-  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
   letter-spacing: 5px;
+  margin-left: 50px;
+  margin-right: 0px;
+
+  @include desktop {
+    margin-right: 120px;
+  }
 }
 
 .nav-link {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
   margin-right: 10px;
 }
 
@@ -74,6 +107,7 @@ body {
   color: color(secondary);
 }
 
+// Hero
 .hero {
   background-image: image(mobileHero);
   background-position: center;
@@ -99,10 +133,13 @@ body {
 
 .heroBrand {
   color: color(primary);
-  font-size: 60px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 4rem;
+  letter-spacing: 5px;
 
   @include desktop {
-    font-size: 90px;
+    font-size: 5rem;
   }
 }
 
@@ -115,10 +152,11 @@ body {
   }
 }
 
-.shopNowBtn {
+.shopNowBtn,
+.shopNowBtn:hover {
   background-color: color(secondary);
   color: color(light);
-  font-size: 30px;
+  font-size: 2rem;
   margin-top: 30vh;
   padding: 10px 20px 10px 20px;
 
@@ -127,6 +165,16 @@ body {
   }
 }
 
+.shopNowBtn:hover {
+  text-shadow: 2px 2px color(primary);
+}
+
+.shopNowBtn a {
+  color: color(light);
+  text-decoration: none;
+}
+
+// About Us On Homepage
 .aboutUs {
   background-color: color(beige);
   margin: 0;
@@ -139,30 +187,256 @@ body {
   }
 }
 
-.aboutParagraph {
-  align-items: center;
-  // display: flex;
-}
+// .aboutParagraph {
+//   align-items: center;
+//   display: flex;
+// }
 
+// Icons
 .icons {
   margin: 0;
+  padding-bottom: 30px;
+  padding-top: 10px;
 
   @include desktop {
     height: 18vh;
     margin-left: 300px;
     margin-right: 300px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     padding-top: 20px;
   }
 }
 
+.iconHeader {
+  color: white;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  @include desktop {
+    font-size: 2rem;
+    letter-spacing: 5px;
+  }
+}
+
+.iconText {
+  color: white;
+  font-size: 1rem;
+
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}
+
+// Shop Links
 .shopLinks {
-  margin: 0;
+  display: flex;
 
   @include desktop {
     height: 20vh;
     margin-left: 200px;
     margin-right: 200px;
-    margin-top: 20px;
+    margin-top: 130px;
+  }
+}
+
+.shopImage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  margin-bottom: 20px;
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+}
+
+.shopHover {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+.container:hover .shopImage {
+  opacity: 0.5;
+}
+
+.container:hover .shopHover {
+  opacity: 1;
+}
+
+.shopButton {
+  background-color: color(secondary);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  padding: 16px 32px;
+}
+
+.shopLink {
+  color: color(light);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.shopLink:hover {
+  text-shadow: 1px 1px color(primary);
+}
+
+//Shop Page CSS
+.shopItems {
+  background-color: color(beige);
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 80px;
+
+  @include desktop {
+    height: auto;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow: hidden;
+    padding-bottom: 60px;
+  }
+}
+
+.shopPageHero {
+  position: relative;
+  text-align: center;
+}
+
+.shopPageHeroImage {
+  width: 100%;
+}
+
+.shopPageHeroText {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shopPageHeroText h3 {
+  color: color(secondary);
+  letter-spacing: 4px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+
+  @include desktop {
+    font-size: 5rem;
+    letter-spacing: 10px;
+  }
+}
+
+.shopPageHeroText h5 {
+  color: white;
+  letter-spacing: 4px;
+}
+
+.collectionDescription {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+  @include desktop {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+
+.productImage {
+  padding-bottom: 5%;
+  width: 100%;
+}
+
+.productName {
+  font-size: 1.7rem;
+  padding: 3%;
+}
+
+.productPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.addToCart,
+.addToCart:hover {
+  background-color: color(secondary);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.addToCart:hover {
+  text-shadow: 1px 1px color(primary);
+}
+
+// About Us Page CSS
+.aboutUs {
+  background-color: color(beige);
+  display: flex;
+  margin: 0;
+
+  @include desktop {
+    height: auto;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow: hidden;
+  }
+}
+
+.aboutUsParagraph {
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+
+  @include desktop {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+.aboutUsParagraph p {
+  font-size: 1.15rem;
+}
+
+.aboutUsParagraph h3 {
+  color: color(secondary);
+  letter-spacing: 4px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 10px;
+
+  @include desktop {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+  }
+}
+
+.aboutIcon {
+  width: 100px;
+
+  @include desktop {
+    width: 120px;
   }
 }
