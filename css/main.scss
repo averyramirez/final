@@ -14,14 +14,7 @@ $colors: (
 );
 
 // Media query sizes
-$tablet: 800px;
 $desktop: 1000px;
-
-@mixin tablet {
-  @media (min-width: #{$tablet}) {
-    @content;
-  }
-}
 
 @mixin desktop {
   @media (min-width: #{$desktop}) {
@@ -187,10 +180,36 @@ footer {
   }
 }
 
-// .aboutParagraph {
-//   align-items: center;
-//   display: flex;
-// }
+.aboutParagraph {
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+
+  @include desktop {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+.aboutParagraph p {
+  font-size: 1.15rem;
+}
+
+.aboutParagraph h3 {
+  color: color(secondary);
+  letter-spacing: 4px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 10px;
+
+  @include desktop {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+  }
+}
 
 // Icons
 .icons {
@@ -337,7 +356,7 @@ footer {
   font-size: 1.3rem;
 
   @include desktop {
-    font-size: 5rem;
+    font-size: 2.5rem;
     letter-spacing: 10px;
   }
 }
@@ -367,7 +386,7 @@ footer {
 }
 
 .productName {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   padding: 3%;
 }
 
